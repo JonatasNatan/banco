@@ -6,8 +6,8 @@ class TesteConta {
     minhaConta = new Conta();
 
     minhaConta.numero = 1234;
-    minhaConta.nome = "Pedro";
-    minhaConta.saldo = 500;
+    minhaConta.nome = "Elton";
+    minhaConta.saldo = 10000;
     minhaConta.tipo = TipoConta.CONTA_CORRENTE;
 
     System.out.println(" -> Saldo da conta: R$ " + minhaConta.saldo);
