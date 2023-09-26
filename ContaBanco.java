@@ -1,35 +1,26 @@
 enum TipoConta {
   CONTA_CORRENTE,
-  CONTA_POUPANCA,
+  CONTA_POUPANCA;
 }
 
-class ContaBanco {
-  // Atributos da classe
+class Conta {
   int numero;
   String nome;
   double saldo;
-  double limite;
   TipoConta tipo;
 
-  // Métodos da classe 
   boolean saque(double quantia) {
     if(this.saldo < quantia) {
-      return false;
+      return false;        
     }
     else
     {
       this.saldo = this.saldo - quantia;
       return true;
-    }
-    
-    
-  }
-  
-  
+    }  
+  }  
+
+  void deposito(double quantia) {
+    this.saldo += quantia;   
+  } 
 }
-
-
-
-
-
-

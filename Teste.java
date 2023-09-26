@@ -1,27 +1,36 @@
-import java.util.Scanner;
+import java.util.Scanner;  // fazer entrada de dados
 
-class Teste {
-    public static void main(String[] args) {
-        ContaBanco minhaConta;
-        minhaConta = new ContaBanco();
-        minhaConta.numero = 65638;
-        minhaConta.nome = "Elton";
-        minhaConta.saldo = 3000;
-        minhaConta.tipo = TipoConta.CONTA_CORRENTE;
+class TesteConta {
+  public static void main(String[] args) {
+    Conta minhaConta;
+    minhaConta = new Conta();
 
-        System.out.println("-> Saldo da Conta: R$ " + minhaConta.saldo);
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("-> Digite o valor que deseja sacar: ");
+    minhaConta.numero = 1234;
+    minhaConta.nome = "Pedro";
+    minhaConta.saldo = 500;
+    minhaConta.tipo = TipoConta.CONTA_CORRENTE;
 
-        double quantia = scanner.nextDouble();
+    System.out.println(" -> Saldo da conta: R$ " + minhaConta.saldo);
 
-        minhaConta.saque(quantia);
-        System.out.println("-> Saldo da Conta: R$ " + minhaConta.saldo);
+    minhaConta.saque(100);      // saque de 100 reais
+    minhaConta.deposito(1000);  // deposito de 100 reais
+    System.out.println(" -> Saldo da conta: R$ " + minhaConta.saldo);
 
-        if (minhaConta.saque(1000)) {
-            System.out.println("* Saque realizado com Sucesso!");
-        } else {
-            System.out.println("* Saldo Insuficiente!");
-        }
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print(" -> Digite o valor que deseja sacar: ");
+    double quantia = scanner.nextDouble();
+    
+    if (minhaConta.saque(quantia))
+    {
+      System.out.println(" * Saque realizado com sucesso!");
     }
+    else
+    {
+      System.out.println(" * Saldo insuficiente!");
+    }    
+    
+    // saque de mil reais
+    System.out.println(" -> Saldo da conta: R$ " + minhaConta.saldo);
+  }
 }
