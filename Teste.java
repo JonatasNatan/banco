@@ -5,7 +5,7 @@ class TesteConta {
     Conta minhaConta;
     minhaConta = new Conta();
 
-    minhaConta.numero = 1234;
+    minhaConta.numero = 12345;
     minhaConta.nome = "Elton";
     minhaConta.saldo = 10000;
     minhaConta.tipo = TipoConta.CONTA_CORRENTE;
